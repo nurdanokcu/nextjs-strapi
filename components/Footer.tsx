@@ -1,21 +1,22 @@
-"use client";
-import { useState } from "react";
+"use client"
 
-const Footer = () => {
-  const [count, setCount] = useState(0);
-  const handleClick = () => setCount((prev) => prev + 1);
+import { useState } from "react"
+
+export default function Footer() {
+  const [count, setCount] = useState(0)
+
+  function handleClick() {
+    setCount(prev => prev + 1)
+  }
+
   return (
-    <div className="mt-6">
-      <p>&copy; {new Date().getFullYear()} Our Company</p>
-      <p>You have clicked the following button {count} times</p>
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        onClick={handleClick}
-      >
-        Click me
-      </button>
-    </div>
-  );
-};
-
-export default Footer;
+    <footer className="bg-white/50 z-10 backdrop-blur">
+      <div className="mx-auto max-w-4xl text-center py-6 text-sm text-gray-400">
+        <p>&copy; {new Date().getFullYear()} Our Company.</p>
+        <p>
+          You have clicked the following button {count} times. <button onClick={handleClick}>Click Me</button>
+        </p>
+      </div>
+    </footer>
+  )
+}
