@@ -2,7 +2,6 @@ export const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export async function fetchStrapiData(endpoint:string, options = {}) {
   const finalUrl = `${BASE_URL}/api/${endpoint}`;
-  console.log("Fetching data from:", finalUrl);
   try {
     const res = await fetch(finalUrl, {
       headers: {

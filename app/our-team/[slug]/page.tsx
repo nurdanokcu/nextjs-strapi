@@ -49,6 +49,7 @@ function renderComponent(item, index: number) {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const { slug } = await params;
   const member = await fetchTeamMember(slug);
+  console.log(member);
 
   if (!member) {
     return {
